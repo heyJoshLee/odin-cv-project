@@ -2,6 +2,7 @@
 /* eslint-disable react/prefer-stateless-function */
 /* eslint-disable react/jsx-filename-extension */
 import React, { Component } from 'react';
+import DisplayPersonalDetails from './DisplayPersonalDetails';
 
 class Display extends Component {
   render() {
@@ -22,12 +23,7 @@ class Display extends Component {
           <div className="picture">
             <img src="#" />
           </div>
-          <div className="personal-details">
-            <h3>Personal Details</h3>
-            <p className="address" />
-            <p className="address" />
-            <p className="email" />
-          </div>
+          <DisplayPersonalDetails />
         </div>
       </div>
     );

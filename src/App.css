@@ -1,12 +1,16 @@
-root {
+:root {
   font-size: 16px;
+  --dark-blue: #2980b9;
+  --white: #ecf0f1;
+  --light-green: #2ecc71;
 }
 
 body {
   padding: 40px;
 }
 
-form {
+form,
+.grid-column-2 {
   display: grid;
   gap: 10px;
   grid-template-columns: 1fr 1fr;
@@ -19,6 +23,48 @@ form input {
   border-radius: 5px;
 }
 
-form button {
+form button,
+.grid-column-2 button {
   grid-column: 1/-1;
+  border: none;
+  background-color: var(--light-green);
+  padding: 10px;
+  width: 30%;
+  margin: 0 auto;
+  color: var(--white);
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.edit-section-title {
+  text-align: center;
+  background-color: var(--dark-blue);
+  padding: 10px;
+  position: relative;
+  font-weight: bold;
+  color: var(--white);
+}
+
+.edit-section-title img {
+  width: 20px;
+  position: absolute;
+  right: 25px;
+  filter: invert(100%);
+}
+
+.edit-section-body {
+  padding-top: 20px;
+  transition: opacity 0.3s linear 2s;
+  overflow: hidden;
+  max-height: 99em;
+  transition: max-height 0.5s ease-in-out;
+}
+
+.edit-section-title img:hover {
+  cursor: pointer;
+}
+
+.collapse {
+  max-height: 0;
+  transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
 }

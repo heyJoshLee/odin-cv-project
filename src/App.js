@@ -1,13 +1,13 @@
 /* eslint-disable react/jsx-filename-extension */
 import './App.css';
 import React from 'react';
-import General from './componenets/General';
+import PersonalDetails from './componenets/PersonalDetails';
 import Display from './componenets/Display';
 
 function App() {
   return (
     <div className="App">
-      <General />
+      <PersonalDetails />
       <Display />
     </div>
   );
