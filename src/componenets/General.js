@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 class General extends Component {
-
   constructor() {
     super();
     this.state = {
@@ -10,39 +9,37 @@ class General extends Component {
       address: '',
       phoneNumber: '',
       email: '',
-      imagePath: ''
-    }
+      imagePath: '',
+    };
 
-    this.handleOnChange = this.handleOnChange.bind(this)
-    this.handleOnSubmit = this.handleOnSubmit.bind(this)
+    this.handleOnChange = this.handleOnChange.bind(this);
+    this.handleOnSubmit = this.handleOnSubmit.bind(this);
   }
 
   handleOnChange(e) {
     const keyName = e.target.name;
-    const value = e.target.value
-    this.setState({
-      [keyName]: value
-    })
+    const { value } = e.target;
+    this.setState({ [keyName]: value });
   }
 
   handleOnSubmit(e) {
-    console.log(e)
+    console.log(e);
   }
 
   render() {
     const { handleOnChange, handleOnSubmit, state } = this;
     return (
-      <div className='general'>
+      <div className="general">
         <form onChange={handleOnChange}>
-          <label htmlFor='first-name'>
+          <label htmlFor="first-name">
             First Name
-            <input id='first-name' name='firstName' placeholder='John' value={state.firstName} onChange={handleOnChange} ></input>
+            <input id="first-name" name="firstName" placeholder="John" value={state.firstName} onChange={handleOnChange} />
           </label>
 
-          <input></input>
+          <input />
         </form>
       </div>
-    )
+    );
   }
 }
 
