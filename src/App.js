@@ -1,4 +1,6 @@
+/* eslint-disable react/jsx-filename-extension */
 import './App.css';
+import React from 'react';
 import General from './componenets/General';
 import Display from './componenets/Display';
 
