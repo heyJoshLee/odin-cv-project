@@ -136,4 +136,23 @@ button:hover {
   display: grid;
   grid-template-columns: 5fr 1fr;
   margin-top: 40px;
+  column-gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+#display-container h2,
+.cv-description {
+  grid-column: 1/-1;
+  text-align: center;
+  border-bottom: 1px solid black;
+  padding-bottom: 15px;
+}
+
+.App > h1 {
+  text-align: center;
+}
+
+.education-details > h3 {
+  margin-top: 0;
 }

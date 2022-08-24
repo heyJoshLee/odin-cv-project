@@ -26,7 +26,6 @@ function PersonalDetails() {
 
     setPersonalInfo(newValues);
     dispatch(setPersonalInformation(newValues));
-    console.log(newValues);
   };
 
   const handleOnSubmit = (e) => {
@@ -52,6 +51,12 @@ function PersonalDetails() {
 
       <label htmlFor="picture">Picture</label>
       <input type="file" name="picture" onChange={handleOnChange} />
+
+      <label htmlFor="Description">Description</label>
+      <textarea name="description" placeholder="An experienced developer">
+        {personalInfo.description}
+      </textarea>
+
     </form>
   );
 

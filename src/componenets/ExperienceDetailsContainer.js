@@ -9,7 +9,6 @@ import ExperienceDetails from './ExperienceDetails';
 
 function ExperienceDetailsContainer() {
   const experienceItems = useSelector((state) => state.experience);
-  console.log(experienceItems);
   const dispatch = useDispatch();
 
   const addNewexperience = () => {

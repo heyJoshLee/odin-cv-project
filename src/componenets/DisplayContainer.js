@@ -12,6 +12,7 @@ function DisplayContainer() {
   return (
     <div id="display-container">
       <h2>{`${generalInformation.firstName} ${generalInformation.lastName}`}</h2>
+      <p className="cv-description">{generalInformation.description}</p>
       <div className="left-pane">
         <DisplayEducationlDetails />
 

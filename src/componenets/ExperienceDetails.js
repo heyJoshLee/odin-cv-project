@@ -19,8 +19,6 @@ function ExperienceDetails(props) {
   const [formData, setFormData] = useState(initialFormData);
   const dispatch = useDispatch();
 
-  console.log(formData);
-
   const handleOnChange = (e) => {
     const keyName = e.target.name;
     const { value } = e.target;

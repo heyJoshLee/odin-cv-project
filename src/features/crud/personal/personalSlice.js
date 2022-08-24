@@ -8,6 +8,7 @@ const initialState = {
   phoneNumber: '',
   email: '',
   picture: '',
+  description: '',
 };
 
 const REDUCER_NAME = 'personal';
@@ -20,7 +21,7 @@ export const personalSlice = createSlice({
   reducers: {
     setPersonalInformation: (state, action) => {
       const {
-        firstName, lastName, address, phoneNumber, email, picture,
+        firstName, lastName, address, phoneNumber, email, picture, description,
       } = action.payload;
       state.firstName = firstName;
       state.lastName = lastName;
@@ -28,6 +29,7 @@ export const personalSlice = createSlice({
       state.phoneNumber = phoneNumber;
       state.email = email;
       state.picture = picture;
+      state.description = description;
       saveToLocalStorage('personal', state);
     },
   },
