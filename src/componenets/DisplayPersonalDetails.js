@@ -21,6 +21,11 @@ function DisplayPersonalDetails() {
       <div className="email">
         {generalInformation.email}
       </div>
+      <div className="skills">
+        <ul>
+          {generalInformation.skills.split(', ').map((skill) => <li>{skill}</li>)}
+        </ul>
+      </div>
 
     </div>
   );

@@ -52,6 +52,9 @@ function PersonalDetails() {
       <label htmlFor="picture">Picture</label>
       <input type="file" name="picture" onChange={handleOnChange} />
 
+      <label htmlFor="skills">skills</label>
+      <input id="skills" name="skills" placeholder="javascript, ruby, html" value={personalInfo.skills} onChange={handleOnChange} />
+
       <label htmlFor="Description">Description</label>
       <textarea name="description" placeholder="An experienced developer">
         {personalInfo.description}

@@ -8,8 +8,10 @@ import DisplayContainer from './componenets/DisplayContainer';
 function App() {
   return (
     <div className="App">
-      <h1>Easy CV</h1>
-      <EditContainer />
+      <div className="no-print">
+        <h1>Easy CV</h1>
+        <EditContainer />
+      </div>
       <DisplayContainer />
     </div>
   );

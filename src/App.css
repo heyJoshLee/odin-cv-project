@@ -156,3 +156,9 @@ button:hover {
 .education-details > h3 {
   margin-top: 0;
 }
+
+@media print {
+  .no-print {
+    display: none;
+  }
+}
