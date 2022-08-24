@@ -7,19 +7,9 @@ import { setPersonalInformation } from '../features/crud/personal/personalSlice'
 import Collapse from './Collapse';
 
 function PersonalDetails() {
-  const initialFormState = {
-    firstName: '',
-    lastName: '',
-    address: '',
-    phoneNumber: '',
-    email: '',
-    picture: '',
-  };
+  const personalInfoFromStore = useSelector((state) => state.general);
 
-  const personalInfoFromStore = useSelector((state) => state);
-
-  const [personalInfo, setPersonalInfo] = useState(initialFormState);
-
+  const [personalInfo, setPersonalInfo] = useState(personalInfoFromStore);
   const dispatch = useDispatch();
 
   const handleOnChange = (e) => {

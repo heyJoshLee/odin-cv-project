@@ -135,4 +135,5 @@ button:hover {
 #display-container {
   display: grid;
   grid-template-columns: 5fr 1fr;
+  margin-top: 40px;
 }

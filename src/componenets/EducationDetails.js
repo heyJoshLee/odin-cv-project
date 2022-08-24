@@ -3,15 +3,7 @@ import { useDispatch } from 'react-redux';
 import { editEducationItem, deleteEducationItem } from '../features/crud/education/educationSlice';
 
 function EducationDetails(props) {
-  const initialFormData = {
-    universityName: '',
-    city: '',
-    degree: '',
-    fromDate: '',
-    toDate: '',
-  };
-
-  const [formData, setFormData] = useState(initialFormData);
+  const [formData, setFormData] = useState(props.initialData);
   const dispatch = useDispatch();
 
   const handleOnChange = (e) => {

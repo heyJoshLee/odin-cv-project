@@ -1,23 +1,37 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, current } from '@reduxjs/toolkit';
+import { saveToLocalStorage, getInitialStateFromLocalStorage } from '../../utilities/localStorageManager';
+
+const REDUCER_NAME = 'education';
 
 export const educationSlice = createSlice({
 
-  name: 'education',
+  name: REDUCER_NAME,
 
-  initialState: [],
+  initialState: getInitialStateFromLocalStorage(REDUCER_NAME, []),
 
   reducers: {
     setEducationInformation: (state, action) => {
-      state = action.payload;
-      return state;
+      saveToLocalStorage(REDUCER_NAME, action.payload);
+      return action.payload;
     },
-    editEducationItem: (state, action) => state.map((educationItem) => {
-      if (educationItem.itemID !== action.payload.itemID) { return educationItem; }
-      return { ...educationItem, ...action.payload.formValues };
-    }),
-    deleteEducationItem: (state, action) => state.filter((educationItem) => {
-      if (educationItem.itemID !== action.payload) { return educationItem; }
-    }),
+    editEducationItem: (state, action) => {
+      let outputArray = [];
+      outputArray = state.map((educationItem) => {
+        if (educationItem.itemID !== action.payload.itemID) { return educationItem; }
+        return { ...educationItem, ...action.payload.formValues };
+      });
+
+      saveToLocalStorage(REDUCER_NAME, outputArray);
+      return outputArray;
+    },
+    deleteEducationItem: (state, action) => {
+      let outputArray = [];
+      outputArray = state.filter((educationItem) => {
+        if (educationItem.itemID !== action.payload) { return educationItem; }
+      });
+      saveToLocalStorage(REDUCER_NAME, outputArray);
+      return outputArray;
+    },
   },
 });
 

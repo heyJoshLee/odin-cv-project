@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { editExperienceItem, deleteExperienceItem } from '../features/crud/experience/experienceSlice';
 
 function ExperienceDetails(props) {
-  const initialFormData = {
+  let initialFormData = {
     position: '',
     company: '',
     city: '',
@@ -12,8 +12,14 @@ function ExperienceDetails(props) {
     description: '',
   };
 
+  if (props.initialData) {
+    initialFormData = props.initialData;
+  }
+
   const [formData, setFormData] = useState(initialFormData);
   const dispatch = useDispatch();
+
+  console.log(formData);
 
   const handleOnChange = (e) => {
     const keyName = e.target.name;
@@ -23,8 +29,6 @@ function ExperienceDetails(props) {
       ...formData,
       [keyName]: value,
     };
-
-    console.log(newValues);
 
     setFormData(newValues);
 
@@ -60,7 +64,7 @@ function ExperienceDetails(props) {
       <input id="toDate" name="toDate" placeholder="Dec 2012" value={formData.toDate} onChange={handleOnChange} />
 
       <label htmlFor="descrption">Descrption</label>
-      <textarea name="description" value={formData.descrption} placeholder="In this position I did..." />
+      <textarea name="description" value={formData.descrption} placeholder="In this position I did...">{formData.description}</textarea>
 
       <button className="delete-button" onClick={deleteItem}>Delete</button>
     </form>
