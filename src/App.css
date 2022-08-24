@@ -123,3 +123,16 @@ button:hover {
   white-space: pre-wrap;
   overflow-wrap: break-word;
 }
+
+.uploaded-picture img {
+  width: 100%;
+}
+
+.uploaded-picture {
+  width: 200px;
+}
+
+#display-container {
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+}

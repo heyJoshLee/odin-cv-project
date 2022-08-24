@@ -13,6 +13,7 @@ function PersonalDetails() {
     address: '',
     phoneNumber: '',
     email: '',
+    picture: '',
   };
 
   const personalInfoFromStore = useSelector((state) => state);
@@ -23,14 +24,19 @@ function PersonalDetails() {
 
   const handleOnChange = (e) => {
     const keyName = e.target.name;
-    const { value } = e.target;
+    let { value } = e.target;
 
+    if (e.target.type === 'file') {
+      value = URL.createObjectURL(e.target.files[0]);
+    }
     const newValues = {
       ...personalInfo,
       [keyName]: value,
     };
+
     setPersonalInfo(newValues);
     dispatch(setPersonalInformation(newValues));
+    console.log(newValues);
   };
 
   const handleOnSubmit = (e) => {
@@ -52,8 +58,10 @@ function PersonalDetails() {
       <input id="phoneNumber" name="phoneNumber" placeholder="555-555-5555" value={personalInfo.phoneNumber} onChange={handleOnChange} />
 
       <label htmlFor="email">Email</label>
-
       <input id="email" name="email" placeholder="john@gmail.com" value={personalInfo.email} onChange={handleOnChange} />
+
+      <label htmlFor="picture">Picture</label>
+      <input type="file" name="picture" onChange={handleOnChange} />
     </form>
   );
 

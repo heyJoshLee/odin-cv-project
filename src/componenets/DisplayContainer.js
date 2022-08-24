@@ -11,15 +11,13 @@ class DisplayContainer extends Component {
     return (
       <div id="display-container">
         <div className="left-pane">
-          <DisplayPersonalDetails />
           <DisplayEducationlDetails />
 
           <DisplayExperiencelDetails />
         </div>
         <div className="right-pane">
-          <div className="picture">
-            <img src="#" />
-          </div>
+          <DisplayPersonalDetails />
+
         </div>
       </div>
     );

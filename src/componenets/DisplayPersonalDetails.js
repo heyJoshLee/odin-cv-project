@@ -6,7 +6,9 @@ function DisplayPersonalDetails() {
 
   return (
     <div className="personal-details">
-      <h3>Personal Details</h3>
+      <div className="uploaded-picture">
+        <img src={generalInformation.picture} />
+      </div>
       <div className="first-and-last-name">
         {`${generalInformation.firstName} ${generalInformation.lastName}`}
       </div>

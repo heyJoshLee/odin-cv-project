@@ -10,19 +10,20 @@ export const personalSlice = createSlice({
     address: '',
     phoneNumber: '',
     email: '',
-    imagePath: '',
+    picture: '',
   },
 
   reducers: {
     setPersonalInformation: (state, action) => {
       const {
-        firstName, lastName, address, phoneNumber, email,
+        firstName, lastName, address, phoneNumber, email, picture,
       } = action.payload;
       state.firstName = firstName;
       state.lastName = lastName;
       state.address = address;
       state.phoneNumber = phoneNumber;
       state.email = email;
+      state.picture = picture;
     },
   },
 });
