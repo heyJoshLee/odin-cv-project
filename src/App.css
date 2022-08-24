@@ -3,6 +3,8 @@
   --dark-blue: #2980b9;
   --white: #ecf0f1;
   --light-green: #2ecc71;
+  --light-grey: #bdc3c7;
+  --light-red: #e74c3c;
 }
 
 body {
@@ -24,7 +26,8 @@ form input {
 }
 
 form button,
-.grid-column-2 button {
+.grid-column-2 button,
+.collapse-container button {
   grid-column: 1/-1;
   border: none;
   background-color: var(--light-green);
@@ -34,6 +37,11 @@ form button,
   color: var(--white);
   font-weight: bold;
   font-size: 1.2rem;
+}
+
+.collapse-container button {
+  margin: 0 auto;
+  grid-column: 1/-1;
 }
 
 .edit-section-title {
@@ -58,6 +66,14 @@ form button,
   overflow: hidden;
   max-height: 99em;
   transition: max-height 0.5s ease-in-out;
+  padding: 20px;
+}
+
+.edit-section-body form {
+  background-color: var(--white);
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 10px;
 }
 
 .edit-section-title img:hover {
@@ -67,4 +83,13 @@ form button,
 .collapse {
   max-height: 0;
   transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+}
+
+.delete-button {
+  background-color: var(--light-red) !important;
+  color: var(--white);
+}
+
+button:hover {
+  cursor: pointer;
 }

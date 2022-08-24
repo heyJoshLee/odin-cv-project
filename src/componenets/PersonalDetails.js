@@ -59,7 +59,7 @@ function PersonalDetails() {
     </form>
   );
 
-  const renderpersonalInformation = () => (
+  const renderPersonalInformation = () => (
     <div className="grid-column-2">
       <div>First Name</div>
       <div>{personalInfo.firstName}</div>
@@ -77,7 +77,13 @@ function PersonalDetails() {
 
   if (editing) {
     return (
-      <Collapse header="Personal Details" headerClass="edit-section-title" bodyClass="edit-section-body" downArrowImagePath={require('../assets/arrow-down.png')}>
+      <Collapse
+        header="Personal Details"
+        collapseId="personal-details"
+        headerClass="edit-section-title"
+        bodyClass="edit-section-body"
+        downArrowImagePath={require('../assets/arrow-down.png')}
+      >
         {renderForm()}
       </Collapse>
     );
@@ -88,7 +94,7 @@ function PersonalDetails() {
       <div className="edit-section">
         <div className="edit-section-title">Personal Details</div>
         <div className="edit-section-body">
-          {renderpersonalInformation()}
+          {renderPersonalInformation()}
         </div>
       </div>
     );

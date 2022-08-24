@@ -1,12 +1,8 @@
 import React from 'react';
-import Uniqid from 'uniqid';
 
 function Collapse(props) {
-  const collapseId = props.id ? props.id : Uniqid();
-  console.log(props.id);
-
   const handleOnClick = () => {
-    const sectionBody = document.querySelector(`#${collapseId}`);
+    const sectionBody = document.querySelector(`#${props.collapseId}`);
     sectionBody.classList.toggle('collapse');
   };
 
@@ -16,7 +12,7 @@ function Collapse(props) {
         {props.header}
         <img src={props.downArrowImagePath} onClick={handleOnClick} />
       </div>
-      <div className={props.bodyClass} id={collapseId}>
+      <div className={props.bodyClass} id={props.collapseId}>
         {props.children}
       </div>
     </div>
