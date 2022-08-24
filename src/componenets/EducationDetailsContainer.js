@@ -29,9 +29,10 @@ function PersonalDetails() {
       headerClass="edit-section-title"
       bodyClass="edit-section-body"
       downArrowImagePath={require('../assets/arrow-down.png')}
+      className="container"
     >
       {renderEducationItems()}
-      <button onClick={addNewEducation}>Add New</button>
+      <button button onClick={addNewEducation}> Add New</button>
     </Collapse>
 
   );

@@ -71,6 +71,7 @@ function PersonalDetails() {
       headerClass="edit-section-title"
       bodyClass="edit-section-body"
       downArrowImagePath={require('../assets/arrow-down.png')}
+      className="container"
     >
       {renderForm()}
     </Collapse>

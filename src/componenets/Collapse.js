@@ -7,7 +7,7 @@ function Collapse(props) {
   };
 
   return (
-    <div className="collapse-container">
+    <div className={`collapse-container ${props.className ? props.className : ''}`}>
       <div className={props.headerClass}>
         {props.header}
         <img src={props.downArrowImagePath} onClick={handleOnClick} />

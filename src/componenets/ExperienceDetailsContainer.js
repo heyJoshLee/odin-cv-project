@@ -28,6 +28,7 @@ function ExperienceDetailsContainer() {
       headerClass="edit-section-title"
       bodyClass="edit-section-body"
       downArrowImagePath={require('../assets/arrow-down.png')}
+      className="container"
     >
       {renderExperienceItems()}
       <button onClick={addNewexperience}>Add New</button>
