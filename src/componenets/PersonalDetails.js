@@ -59,6 +59,7 @@ function PersonalDetails() {
 
   return (
     <Collapse
+      key="personal-details"
       header="Personal Details"
       collapseId="personal-details"
       headerClass="edit-section-title"

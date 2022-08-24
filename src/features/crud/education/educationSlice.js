@@ -1,8 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-export const educationalSlice = createSlice({
+export const educationSlice = createSlice({
 
-  name: 'educational',
+  name: 'education',
 
   initialState: [],
 
@@ -21,6 +21,6 @@ export const educationalSlice = createSlice({
   },
 });
 
-export const { setEducationInformation, editEducationItem, deleteEducationItem } = educationalSlice.actions;
+export const { setEducationInformation, editEducationItem, deleteEducationItem } = educationSlice.actions;
 
-export default educationalSlice.reducer;
+export default educationSlice.reducer;

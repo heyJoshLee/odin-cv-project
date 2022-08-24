@@ -3,12 +3,12 @@
 /* eslint-disable react/jsx-filename-extension */
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { setEducationInformation } from '../features/crud/educational/educationalSlice';
+import { setEducationInformation } from '../features/crud/education/educationSlice';
 import Collapse from './Collapse';
 import EducationDetails from './EducationDetails';
 
 function PersonalDetails() {
-  const educationItems = useSelector((state) => state.educational);
+  const educationItems = useSelector((state) => state.education);
 
   const dispatch = useDispatch();
 

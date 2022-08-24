@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { editEducationItem, deleteEducationItem } from '../features/crud/education/educationSlice';
+import { editExperienceItem, deleteExperienceItem } from '../features/crud/experience/experienceSlice';
 
-function EducationDetails(props) {
+function ExperienceDetails(props) {
   const initialFormData = {
-    universityName: '',
+    position: '',
+    company: '',
     city: '',
-    degree: '',
     fromDate: '',
     toDate: '',
+    description: '',
   };
 
   const [formData, setFormData] = useState(initialFormData);
@@ -23,9 +24,11 @@ function EducationDetails(props) {
       [keyName]: value,
     };
 
+    console.log(newValues);
+
     setFormData(newValues);
 
-    dispatch(editEducationItem({
+    dispatch(editExperienceItem({
       formValues: newValues,
       itemID: props.initialData.itemID,
     }));
@@ -36,29 +39,32 @@ function EducationDetails(props) {
   };
 
   const deleteItem = () => {
-    dispatch(deleteEducationItem(props.initialData.itemID));
+    dispatch(deleteExperienceItem(props.initialData.itemID));
   };
 
   return (
-    <form onChange={handleOnChange} onSubmit={handleOnSubmit} className="add-education-form">
-      <label htmlFor="university-name">University Name</label>
-      <input id="university-name" name="universityName" placeholder="Harvard" value={formData.universityName} onChange={handleOnChange} />
+    <form onChange={handleOnChange} onSubmit={handleOnSubmit} className="add-Experience-form">
+      <label htmlFor="position">Position</label>
+      <input id="position" name="position" placeholder="Senior Javascript Developer" value={formData.position} onChange={handleOnChange} />
+
+      <label htmlFor="company">Company</label>
+      <input id="company" name="company" placeholder="Google" value={formData.company} onChange={handleOnChange} />
 
       <label htmlFor="city">City</label>
       <input id="city" name="city" placeholder="Cambridge" value={formData.city} onChange={handleOnChange} />
-
-      <label htmlFor="degree">Degree</label>
-      <input id="degree" name="degree" placeholder="B.A. Business" value={formData.degree} onChange={handleOnChange} />
 
       <label htmlFor="fromDate">From Date</label>
       <input id="fromDate" name="fromDate" placeholder="Jan 2008" value={formData.fromDate} onChange={handleOnChange} />
 
       <label htmlFor="toDate">To Date</label>
-
       <input id="toDate" name="toDate" placeholder="Dec 2012" value={formData.toDate} onChange={handleOnChange} />
+
+      <label htmlFor="descrption">Descrption</label>
+      <textarea name="description" value={formData.descrption} placeholder="In this position I did..." />
+
       <button className="delete-button" onClick={deleteItem}>Delete</button>
     </form>
   );
 }
 
-export default EducationDetails;
+export default ExperienceDetails;

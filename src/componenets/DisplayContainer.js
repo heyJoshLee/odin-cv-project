@@ -2,32 +2,28 @@
 /* eslint-disable react/prefer-stateless-function */
 /* eslint-disable react/jsx-filename-extension */
 import React, { Component } from 'react';
+import DisplayEducationlDetails from './DisplayEducationDetails';
+import DisplayExperiencelDetails from './DisplayExperienceDetails';
 import DisplayPersonalDetails from './DisplayPersonalDetails';
 
-class Display extends Component {
+class DisplayContainer extends Component {
   render() {
     return (
-      <div id="display">
+      <div id="display-container">
         <div className="left-pane">
-          <div className="description">
-            <h2>Description</h2>
-          </div>
-          <div className="experience">
-            <h2>Experience</h2>
-          </div>
-          <div className="education">
-            <h2>Education</h2>
-          </div>
+          <DisplayPersonalDetails />
+          <DisplayEducationlDetails />
+
+          <DisplayExperiencelDetails />
         </div>
         <div className="right-pane">
           <div className="picture">
             <img src="#" />
           </div>
-          <DisplayPersonalDetails />
         </div>
       </div>
     );
   }
 }
 
-export default Display;
+export default DisplayContainer;

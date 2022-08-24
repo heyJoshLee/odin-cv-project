@@ -1,16 +1,15 @@
 /* eslint-disable react/jsx-filename-extension */
 import './App.css';
 import React from 'react';
-import PersonalDetails from './componenets/PersonalDetails';
-import EducationDetailsContainer from './componenets/EducationDetailsContainer';
-import Display from './componenets/Display';
+
+import EditContainer from './componenets/EditContianer';
+import DisplayContainer from './componenets/DisplayContainer';
 
 function App() {
   return (
     <div className="App">
-      <PersonalDetails />
-      <EducationDetailsContainer />
-      <Display />
+      <EditContainer />
+      <DisplayContainer />
     </div>
   );
 }

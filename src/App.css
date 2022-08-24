@@ -5,6 +5,7 @@
   --light-green: #2ecc71;
   --light-grey: #bdc3c7;
   --light-red: #e74c3c;
+  --dark-grey: #7f8c8d;
 }
 
 body {
@@ -18,11 +19,16 @@ form,
   grid-template-columns: 1fr 1fr;
 }
 
-form input {
+form input,
+form textarea {
   height: 1.5rem;
   padding: 5px;
   font-size: 1.2rem;
   border-radius: 5px;
+}
+
+form textarea {
+  height: 200px;
 }
 
 form button,
@@ -92,4 +98,28 @@ form button,
 
 button:hover {
   cursor: pointer;
+}
+
+.education-item,
+.experience-item {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.university-name-and-city-container {
+  display: flex;
+  gap: 5px;
+}
+
+.print-heading-section {
+  background-color: var(--dark-grey);
+  color: var(--white);
+  padding: 10px;
+  margin: 20px 0;
+}
+
+.description-area {
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
 }
