@@ -9,7 +9,7 @@ const initialState = {
   email: '',
   picture: '',
   description: '',
-  skills: [],
+  skills: '',
 };
 
 const REDUCER_NAME = 'personal';
